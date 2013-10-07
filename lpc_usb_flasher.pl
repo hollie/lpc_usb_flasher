@@ -66,7 +66,7 @@ if ($unmount =~ /Volume.+unmounted/) {
 }
 
 # dd
-my $dd = `dd if=$to_flash->{'file'} of=$to_flash->{'drive'} seek=4`;
+my $dd = `dd if=\"$to_flash->{'file'}\" of=$to_flash->{'drive'} seek=4`;
 
 say "Target flashed, reset it to run the code";
 
