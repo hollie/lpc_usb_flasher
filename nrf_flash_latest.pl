@@ -40,7 +40,6 @@ foreach $file (@files) {
 say "Going to flash $to_flash->{'file'}\n\tcreated " . ctime($to_flash->{'created'}) . "\n\tto device";
 
 # Execute command
-my $cmd = `nrfjprog -s 681684213 --program \"$to_flash->{'file'}\" --chiperase --verify`;
-print $cmd;
+system("nrfjprog -s 681684213 --program $to_flash->{'file'} --chiperase --verify");
 
-say "Target flashed";
+say "Done";
